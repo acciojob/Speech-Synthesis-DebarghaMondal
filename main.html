@@ -37,6 +37,19 @@
   const stopButton = document.querySelector('#stop');
 
   //Your code goes here
+	//start button
+	const textArea = document.querySelector('textarea[name="text"]');
+speakButton.addEventListener("click",()=>{
+	let utterance = new SpeechSynthesisUtterance(textArea.value);
+	speechSynthesis.speak(utterance);
+});
+
+	//stop button
+	stopButton.addEventListener("click",()=>{
+		speechSynthesis.cancel();
+	})
+	
+	
 </script>
 
 </body>
